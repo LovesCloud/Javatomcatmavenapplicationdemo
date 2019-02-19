@@ -4,7 +4,7 @@ node {
    def mvnHome
    stage('git checkout') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/rajnikhattarrsinha/java-tomcat-maven-example'
+      git 'https://github.com/LovesCloud/Javatomcatmavenapplicationdemo'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
