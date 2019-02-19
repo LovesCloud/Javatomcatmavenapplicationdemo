@@ -8,9 +8,15 @@ node {
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = tool 'Maven 3.5.4'
+      //mvnHome = tool 'Maven 3.5.4'
    }
+   
    stage('Build') {
+      
+       // Get maven home path and build
+         def mvnHome =  tool name: 'Maven 3.5.4', type: 'maven'   
+         sh "${mvnHome}/bin/mvn package"
+      
       // Run the maven build
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
