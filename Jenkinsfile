@@ -13,7 +13,7 @@ node {
      }
    
    stage('Deploy') {
-      sshagent(['807ca4ff-aa82-4c14-b9e5-5cba44515031']) {
+      sshagent(['tomcatdeploymentserver']) {
         sh 'scp -o StrictHostKeyChecking=no target/*.war root@34.73.32.204:/opt/tomcat/latest/webapps'
       }
    }
